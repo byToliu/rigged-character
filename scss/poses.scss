@@ -1,0 +1,449 @@
+.char__head[facepose="2"]{
+
+    // &::before {
+    //     content: '';
+    //         width: 12%;
+    //         height: 15%;
+    //         transform: translateX(-100%);
+    //         border-radius: 50px;
+    //         position: absolute;
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: space-between;
+    //         background-color: black;
+    //         z-index: 0;
+    //         box-shadow: black 1.5vw 0px 0 0;
+
+    //         @media (max-width: 768px) {
+    //             box-shadow: black 3vw 0px 0 0;
+    //         }
+    // }
+
+    // &::after {
+    //     content: '';
+    //     width: 22%;
+    //     height: 7%;
+    //     position: absolute;
+    //     border-right: 2px solid black;
+    //     border-left: 2px solid black;
+    //     border-bottom: 2px solid black;
+    //     border-radius: 0 0 50px 50px;
+    //     bottom: 25%;
+    // }
+
+    
+    .char__mouth {
+        width: 22%;
+        height: 5%;
+        position: absolute;
+        border-right: 2px solid black;
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        border-radius: 50px 50px 0px 0px;
+        bottom: 25%;
+        background-color: transparent !important;
+        &::before {
+            display: none;
+        }
+    }
+
+    .char__eyes {
+        width: 50%;
+        height: 15%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: transparent !important;
+        z-index: 0;
+        .eye {
+            @mixin eye {
+                height: 50%;
+                width: 40%;
+                background-color: black;
+                position: absolute;
+                &::before {
+                    display: none;
+                }
+            }
+
+            &-R {
+                @include eye;
+                right: 0;
+                border-radius: 40%;
+                transform: rotate(330deg)
+            }
+            &-L {
+                @include eye;
+                left: 0;
+                border-radius: 40%;
+                transform: rotate(-330deg)
+            }
+        }
+    }
+
+
+}
+
+.char__head[facepose="3"]{
+
+   
+    
+    .char__mouth {
+        width: 22%;
+        height: 7%;
+        position: absolute;
+        border-right: 2px solid black;
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        border-bottom: none;
+        border-radius: 50px 50px 0px 0px;
+        bottom: 25%;
+        background-color: transparent !important;
+        &::before {
+            display: none;
+        }
+    }
+
+
+}
+
+.char__head[facepose="4"]{
+
+   
+    
+    .char__mouth {
+        width: 22%;
+        height: 1%;
+        position: absolute;
+        border-right: 2px solid black;
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        border-bottom: none;
+        border-radius: 50px 50px 0px 0px;
+        bottom: 25%;
+        background-color: transparent !important;
+        &::before {
+            display: none;
+        }
+    }
+
+
+}
+
+.char__head[facepose="5"]{
+
+    .char__mouth {
+        width: 12%;
+        height: 15%;
+        position: absolute;
+        border-right: 2px solid black;
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        border-radius: 50px;
+        bottom: 22%;
+        background-color: transparent !important;
+        &::before {
+            display: none;
+        }
+    }
+
+
+}
+
+
+
+.char__hand{
+
+    &-R[handpose="2"]{
+    
+        b {
+            &:nth-child(1) {
+
+                top: 0;
+                margin-right: 5%;
+                transform: rotate(350deg);
+            }
+            &:nth-child(2) {
+                top: 25%;
+                transform: rotate(5deg);
+            
+            }
+            &:nth-child(3) {
+                width: 0;
+            }
+            &:nth-child(4) {
+                width: 0;
+            }
+        }
+    }
+
+    &-L[handpose="2"]{
+    
+        b {
+            &:nth-child(1) {
+
+                top: 0;
+                margin-right: 5%;
+                transform: rotate(15deg);
+            }
+            &:nth-child(2) {
+                top: 25%;
+                transform: rotate(0deg);
+            
+            }
+            &:nth-child(3) {
+                width: 0;
+            }
+            &:nth-child(4) {
+                width: 0;
+            }
+        }
+    }
+
+// -------------------------------
+
+    &-R[handpose="3"]{
+    
+        b {
+            &:nth-child(1) {
+                top: 0;
+                margin-right: 0%;
+            }
+            &:nth-child(2) {
+                top: 25%;
+                right: -5%;
+            }
+            &:nth-child(3) {
+                right: -11%;
+                bottom: 25%;
+            }
+            &:nth-child(4) {
+                transform: rotate(360deg);
+                right: 8%;
+            }
+        }
+    }
+
+    &-L[handpose="3"]{
+    
+        b {
+            &:nth-child(1) {
+                top: 0;
+                margin-left: 0%;
+            }
+            &:nth-child(2) {
+                top: 25%;
+                left: -5%;
+            }
+            &:nth-child(3) {
+                left: -12%;
+                bottom: 25%;
+            }
+            &:nth-child(4) {
+                transform: rotate(360deg);
+                left: 10%;
+            }
+        }
+    }
+
+// -------------------------------
+
+&-R[handpose="4"]{
+    
+    b {
+        &:nth-child(2) {
+            width: 0;
+        }
+        &:nth-child(3) {
+            margin-right: 8%;
+            transform: rotate(9deg);
+        }
+    }
+}
+
+&-L[handpose="4"]{
+    
+    b {
+        &:nth-child(2) {
+            width: 0;
+        }
+        &:nth-child(3) {
+            margin-left: 8%;
+            transform: rotate(-9deg);
+        }
+    }
+}
+
+// -------------------------------
+
+&-R[handpose="5"]{
+    
+    b {
+        &:nth-child(1) {
+            height: 40%;
+            right: -10%;
+            top: 25%;
+        }
+        &:nth-child(2) {
+            height: 35%;
+            right: -5%;
+            top: 52%;
+        }
+        &:nth-child(3) {
+            bottom: 0%;
+            height: 35%;
+            right: -11%;
+        }
+        &:nth-child(4) {
+            height: 35%;
+            right: 5%;
+            transform: rotate(285deg);
+            top: 0%;
+        }
+    }
+}
+
+&-L[handpose="5"]{
+    
+    b {
+        &:nth-child(1) {
+            height: 40%;
+            left: -10%;
+            top: 25%;
+        }
+        &:nth-child(2) {
+            height: 35%;
+            left: -5%;
+            top: 52%;
+        }
+        &:nth-child(3) {
+            bottom: 0%;
+            height: 35%;
+            left: -11%;
+        }
+        &:nth-child(4) {
+            height: 35%;
+            left: 5%;
+            transform: rotate(-285deg);
+            top: 0%;
+        }
+    }
+}
+
+// -------------------------------
+
+&-R[handpose="6"]{
+    
+    b {
+        &:nth-child(1) {
+            height: 40%;
+            right: -10%;
+            top: 25%;
+        }
+        &:nth-child(2) {
+            height: 35%;
+            right: -5%;
+            top: 52%;
+        }
+        &:nth-child(3) {
+            bottom: 0%;
+            height: 35%;
+            right: -11%;
+        }
+        &:nth-child(4) {
+            height: 35%;
+            right: 22%;
+            transform: rotate(8deg);
+            bottom: -10%;
+        }
+    }
+}
+
+&-L[handpose="6"]{
+    
+    b {
+        &:nth-child(1) {
+            height: 40%;
+            left: -10%;
+            top: 25%;
+        }
+        &:nth-child(2) {
+            height: 35%;
+            left: -5%;
+            top: 52%;
+        }
+        &:nth-child(3) {
+            bottom: 0%;
+            height: 35%;
+            left: -11%;
+        }
+        &:nth-child(4) {
+            height: 35%;
+            left: 22%;
+            transform: rotate(-8deg);
+            bottom: -10%;
+        }
+    }
+}
+
+// -------------------------------
+
+&-R[handpose="7"]{
+    
+    b {
+        &:nth-child(1) {
+            height: 40%;
+            right: -10%;
+            top: 25%;
+        }
+        &:nth-child(2) {
+            height: 35%;
+            right: -5%;
+            top: 52%;
+        }
+        &:nth-child(3) {
+            bottom: -1%;
+            height: 25%;
+            right: -25%;
+            transform: rotate(18deg);
+        }
+        &:nth-child(4) {
+            height: 35%;
+            right: 0%;
+            transform: rotate(301deg);
+            top: -10%;
+        }
+    }
+}
+
+&-L[handpose="7"]{
+    
+    b {
+        &:nth-child(1) {
+            height: 40%;
+            left: -10%;
+            top: 25%;
+        }
+        &:nth-child(2) {
+            height: 35%;
+            left: -5%;
+            top: 52%;
+        }
+        &:nth-child(3) {
+            bottom: -1%;
+            height: 25%;
+            left: -25%;
+            transform: rotate(-18deg);
+        }
+        &:nth-child(4) {
+            height: 35%;
+            left: 0%;
+            transform: rotate(-301deg);
+            top: -10%;
+        }
+    }
+}
+
+}

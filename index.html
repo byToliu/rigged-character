@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,221 @@
 
     <link rel="stylesheet" href="src/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-   integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <title>New Grunt Template</title>
+    <title>Rigged Character</title>
+    
 </head>
 
 <body>
+    
+
+    <main>
+        <button onclick="rayX()"></button>
+
+        <div class="char">
+            <header>
+                <b class="char__body">
+                    <b class="char__head" facepose="1">
+                        <b class="char__eyes">
+                            <b class="eye-R"></b>
+                            <b class="eye-L"></b>
+                        </b>
+                        <b class="char__mouth"></b>
+                    </b>
+                    <b class="char__arm-R" id="R">
+                        <b class="char__forearm-R" id="R">
+                            <b class="char__hand-R" id="R">
+                                <b class="char__finger"></b>
+                                <b class="char__finger"></b>
+                                <b class="char__finger"></b>
+                                <b class="char__finger"></b>
+                            </b>
+                        </b>
+                    </b>
+                    <b class="char__arm-L" id="L">
+                        <b class="char__forearm-L" id="L">
+                            <b class="char__hand-L" id="L">
+                                <b class="char__finger"></b>
+                                <b class="char__finger"></b>
+                                <b class="char__finger"></b>
+                                <b class="char__finger"></b>
+                            </b>
+                        </b>
+                    </b>
+                </b>
+            </header>
+            <footer>
+                <b class="char__leg-R" id="R">
+                    <b class="char__calf-R" id="R">
+                        <b class="char__foot-R" id="R">
+                        </b>
+                    </b>
+                </b>
+                <b class="char__leg-L" id="L">
+                    <b class="char__calf-L" id="L">
+                        <b class="char__foot-L" id="L">
+                        </b>
+                    </b>
+                </b>
+            </footer>
+        </div>
+    </main>
+
+    <aside>
+        <nav class="nav-main">
+
+            <section class="sanfona">
+                <div boneType="head" onclick="sanfona(this)"  class="sanfona__header">Head</div>
+                <div class="sanfona__content hide-none">
+                    
+                    <div class="bone-controller">
+                        <p>Head</p>
+                        <input type="range"    min="-20" max="20" value="0"  name="" id="char__head">
+                        <span class="degs" >0deg</span>
+                    </div>
+
+                    <h4>Face pose:</h4>
+                    <div class="face-expressions">
+                        <button id="1" onclick="poseSelect(this)" class="btn--selected">🙂</button>
+                        <button id="2"  onclick="poseSelect(this)">😠</button>
+                        <button id="3"  onclick="poseSelect(this)">🙁</button>
+                        <button id="4"  onclick="poseSelect(this)">😐</button>
+                        <button id="5"  onclick="poseSelect(this)">😮</button>
+                    </div>
+                   
+                </div>
+            </section>
+
+            <section class="sanfona">
+                <div boneType="body" onclick="sanfona(this)"  class="sanfona__header">Body</div>
+                <div class="sanfona__content hide-none">
+                    
+                    <div class="bone-controller">
+                        <p>Body</p>
+                        <input type="range"  min="-50" max="50" value="0"  name="" id="char__body">
+                        <span class="degs">0deg</span>
+                    </div>
+                   
+                </div>
+            </section>
+
+            <section class="sanfona">
+                <div boneType="arm" onclick="sanfona(this)"  class="sanfona__header">Arms</div>
+                <div class="sanfona__content">
+                    <h4 side="L">Left</h4>
+                    <div class="bone-controller">
+                        <p>Arm</p>
+                        <input type="range" min="-100" max="100" value="0"  name="" id="char__arm-L">
+                        <span class="degs">0deg</span>
+                    </div>
+                    <div class="bone-controller">
+                        <p>Forearm</p>
+                        <input type="range"  min="-100" max="100" value="0"  name="" id="char__forearm-L">
+                        <span class="degs">0deg</span>
+                    </div>
+                    <div class="bone-controller">
+                        <p>Hand</p>
+                        <input type="range"  min="-100" max="100" value="0"  name="" id="char__hand-L">
+                        <span class="degs">0deg</span>
+                    </div>
+                    
+                    <div class="hand__invert" side="L">
+                        <input type="checkbox" name="hand__invert-L">
+                        <label for="hand__invert-L">Flip hand</label>
+                    </div>
+                    <br>
+                    <h4 class="hand-title" side="L">Hand pose:</h4>
+                    <div class="hand-expressions" side="L">
+                        <button id="1" onclick="poseSelect(this)" class="btn--selected">🖐🏽</button>
+                        <button id="2"  onclick="poseSelect(this)">✌🏽</button>
+                        <button id="3"  onclick="poseSelect(this)">👆🏽</button>
+                        <button id="4"  onclick="poseSelect(this)">🤘🏽</button>
+                        <button id="5"  onclick="poseSelect(this)">👍🏽</button>
+                        <button id="6"  onclick="poseSelect(this)">✊🏽</button>
+                        <button id="7"  onclick="poseSelect(this)">🤙🏽</button>
+                    </div>
+                    <br>
+                    <h4 side="R">Right</h4>
+                    <div class="bone-controller">
+                        <p>Arm</p>
+                        <input type="range"  min="-100" max="100" value="0"  name="" id="char__arm-R">
+                        <span class="degs">0deg</span>
+                    </div>
+                    <div class="bone-controller">
+                        <p>Forearm</p>
+                        <input type="range"  min="-100" max="100" value="0"  name="" id="char__forearm-R">
+                        <span class="degs">0deg</span>
+                    </div>
+                    <div class="bone-controller">
+                        <p>Hand</p>
+                        <input type="range"  min="-100" max="100" value="0"  name="" id="char__hand-R">
+                        <span class="degs">0deg</span>
+                    </div>
+                    
+                    <div class="hand__invert" side="R">
+                        <input type="checkbox" name="hand__invert-R">
+                        <label for="hand__invert-R">Flip hand</label>
+                    </div>
+                    <br>
+                    <h4  class="hand-title" side="R">Hand pose:</h4>
+                    <div class="hand-expressions" side="R">
+                        <button id="1" onclick="poseSelect(this)" class="btn--selected">🖐🏽</button>
+                        <button id="2"  onclick="poseSelect(this)">✌🏽</button>
+                        <button id="3"  onclick="poseSelect(this)">👆🏽</button>
+                        <button id="4"  onclick="poseSelect(this)">🤘🏽</button>
+                        <button id="5"  onclick="poseSelect(this)">👍🏽</button>
+                        <button id="6"  onclick="poseSelect(this)">✊🏽</button>
+                        <button id="7"  onclick="poseSelect(this)">🤙🏽</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sanfona">
+                <div boneType="leg" onclick="sanfona(this)"  class="sanfona__header">Legs</div>
+                <div class="sanfona__content hide-none">
+                    <h4 side="L">Left</h4>
+                    <div class="bone-controller">
+                        <p>Leg</p>
+                        <input type="range"  min="-100" max="100" value="0"  name="" id="char__leg-L">
+                        <span class="degs">0deg</span>
+                    </div>
+                    <div class="bone-controller">
+                        <p>Calf</p>
+                        <input type="range"  min="-100" max="100" value="0"  name="" id="char__calf-L">
+                        <span class="degs">0deg</span>
+                    </div>
+                    <div class="bone-controller">
+                        <p>Foot</p>
+                        <input type="range"  min="-100" max="100" value="0"  name="" id="char__foot-L">
+                        <span class="degs">0deg</span>
+                    </div>
+                    <br>
+                    <h4 side="R">Right</h4>
+                    <div class="bone-controller">
+                        <p>Leg</p>
+                        <input type="range"  min="-100" max="100" value="0"  name="" id="char__leg-R">
+                        <span class="degs">0deg</span>
+                    </div>
+                    <div class="bone-controller">
+                        <p>Calf</p>
+                        <input type="range"  min="-100" max="100" value="0"  name="" id="char__calf-R">
+                        <span class="degs">0deg</span>
+                    </div>
+                    <div class="bone-controller">
+                        <p>Foot</p>
+                        <input type="range"  min="-100" max="100" value="0"  name="" id="char__foot-R">
+                        <span class="degs">0deg</span>
+                    </div>
+                </div>
+            </section>
+            
+        </nav>
+    </aside>
+
 
 </body>
 
 <script src="src/main.js"></script>
+
 </html>
