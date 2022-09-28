@@ -160,6 +160,10 @@ aside {
         padding: 3% 0% 5% 0%;
         border-bottom: 1px solid rgb(218, 218, 218);
         // background-color: #efefef;
+        backdrop-filter: brightness(0.95);
+        animation: fadeIn .6s;
+        // transform-origin: top center;
+        
        
 
         h4{
@@ -250,4 +254,15 @@ aside {
             }
         }
     }
+}
+
+@keyframes openContent {
+    0%{transform: scaleY(0); opacity: 0; clip-path: inset(0 0 0 0);}
+    100%{transform: scaleX(1); opacity: 1; clip-path: inset(0 0 100% 0);}
+}
+
+
+@keyframes fadeIn {
+    0%{opacity: 0; clip-path: inset(0 0 100% 0);}
+    100%{opacity: 1; clip-path: inset(0 0 0 0);}
 }
